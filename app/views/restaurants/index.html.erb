@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Foodie</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Picture</th>
+      <th>Website</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @current_restaurant.name %></td>
+        <td><%= image_tag @current_restaurant.picture, width: 300 %></td>
+        <td><%= link_to "YES", @current_restaurant.website, class: "btn btn-success" %></td>
+        <td><form method = "post" action ="/nexxt">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+            <input type = "hidden"  name = "response" value = "no">
+            <button type = "submit">No</button>
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+<br>
