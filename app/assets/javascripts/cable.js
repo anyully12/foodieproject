@@ -11,3 +11,8 @@
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
+$("button").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".second").offset().top},
+        'slow');
+});
