@@ -5,10 +5,46 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     # @restaurants = Restaurant.all
-   if params["response"].nil?
-      session[:restaurant_ids] = Restaurant.all.map{|x| x.id}.shuffle
+  if Cloud.last.identifier
+    p "<>"*30
+    p "inside first if"
+  else
+
+    if session[:user] = Cloud.last.identifier
+      p "<>"*30
+      p "inside second if"
+
+    else
+      p "<>"*30
+      p "inisde else"
+      session[:user] = SecureRandom.hex
+
+      foodstuff = Cloud.create(identifier: session[:user], description: method_to_call_api("food", "wynwood,fl")["businesses"])
+
+      foodstuff.codename = foodstuff.description["businesses"].shuffle.map{|el| "#{el['id']}//"}.join
+
+      foodstuff.save
+
+      arr = foodstuff.codename.split("//").last
+      p "Codename: #{arr}"
+      varr = Cloud.find_by(codename: arr)
+
+      varr = varr.description.select{|x| x["id"] == varr.codename}
+
+      @current_restaurant = varr[0]
+
+      varr.description = varr.description - varr[0]
+
+      varr.save
+
     end
-   @current_restaurant = Restaurant.find(session[:restaurant_ids].pop)
+  end
+
+   # if params["response"].nil?
+   #    session[:restaurant_ids] = Restaurant.all.map{|x| x.id}.shuffle
+   #  end
+   # @current_restaurant = Restaurant.find(session[:restaurant_ids].pop)
+
   end
 
   # GET /restaurants/1

@@ -14,9 +14,9 @@
 
   <tbody>
       <tr>
-        <td><%= @current_restaurant.name %></td>
-        <td><%= image_tag @current_restaurant.picture, width: 300 %></td>
-        <td><%= link_to "YES", @current_restaurant.website, class: "btn btn-success" %></td>
+        <td><%= @current_restaurant["name"] %></td>
+        <td><%= image_tag @current_restaurant["image_url"], width: 300 %></td>
+        <td><%= link_to "YES", @current_restaurant["url"], class: "btn btn-success" %></td>
         <td><form method = "post" action ="/nexxt">
             <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
             <input type = "hidden"  name = "response" value = "no">
