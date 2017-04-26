@@ -1,3 +1,26 @@
 // Place all the styles related to the restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.image-container {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.image-container img {
+  object-fit: cover;
+  margin: 0, 0;
+  height: 60%;
+  width: 60%;
+}
+
+.rest-name-label {
+  font-family: "Luckiest Guy";
+  font-size: 30px;
+  color: #fff;
+}
+
+.intro{
+
+}

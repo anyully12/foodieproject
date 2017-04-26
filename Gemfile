@@ -37,6 +37,13 @@ gem 'geokit-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
+# NOTE: The sass-rails gem is included with new Rails applications by default.
+#       Please make sure that it is not already in your Gemfile before uncommenting it.
+# gem 'sass-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
