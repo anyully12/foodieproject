@@ -3,6 +3,7 @@
   <head>
     <title>Foodproject</title>
     <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,7 +14,6 @@
 
 
     <% if Rails.env.development? %>
-      <%= console %>
     <% end %>
   </body>
 </html>
