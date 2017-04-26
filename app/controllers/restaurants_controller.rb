@@ -24,6 +24,9 @@ class RestaurantsController < ApplicationController
   # remaining.codename.pop
   @current_restaurant = remaining.description.pop
   remaining.save
+
+  remaining["description"].count == 0 ? reset_session : nil  
+
 end
 
    # if params["response"].nil?
