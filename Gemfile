@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'http'
 
-# gem 'json'
+gem 'json'
 
 gem 'geokit-rails'
 
